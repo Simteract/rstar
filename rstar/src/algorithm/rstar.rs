@@ -6,6 +6,8 @@ use crate::point::{Point, PointExt};
 use crate::rtree::RTree;
 use num_traits::{Bounded, Zero};
 
+use crate::lib::Vec;
+
 /// Inserts points according to the r-star heuristic.
 ///
 /// The r*-heuristic focusses on good insertion quality at the costs of

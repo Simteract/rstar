@@ -4,6 +4,8 @@ use crate::RTreeNode;
 use crate::RTreeNode::*;
 use crate::RTreeObject;
 
+use crate::lib::Vec;
+
 pub struct IntersectionIterator<'a, T, U = T>
 where
     T: RTreeObject,

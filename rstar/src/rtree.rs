@@ -10,6 +10,8 @@ use crate::object::{PointDistance, RTreeObject};
 use crate::params::{verify_parameters, DefaultParams, InsertionStrategy, RTreeParams};
 use crate::Point;
 
+use crate::lib::Vec;
+
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 

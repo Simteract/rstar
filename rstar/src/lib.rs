@@ -22,6 +22,31 @@
 //!
 #![deny(missing_docs)]
 #![forbid(unsafe_code)]
+#![cfg_attr(not(feature = "std"), no_std)]
+
+#[cfg(not(feature = "std"))]
+extern crate core as std;
+
+#[cfg(not(feature = "std"))]
+extern crate alloc;
+
+#[cfg(not(feature = "std"))]
+extern crate num;
+
+#[doc(hidden)]
+pub mod lib {
+    #[cfg(not(feature = "std"))]
+    pub use alloc::vec::Vec;
+    #[cfg(not(feature = "std"))]
+    pub use alloc::{format, vec};
+    #[cfg(feature = "std")]
+    pub use std::vec::Vec;
+
+    #[cfg(not(feature = "std"))]
+    pub use alloc::collections::BinaryHeap;
+    #[cfg(feature = "std")]
+    pub use std::collections::binary_heap::BinaryHeap;
+}
 
 mod aabb;
 mod algorithm;

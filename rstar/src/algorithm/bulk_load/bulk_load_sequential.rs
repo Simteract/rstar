@@ -4,6 +4,13 @@ use crate::object::RTreeObject;
 use crate::params::RTreeParams;
 use crate::point::Point;
 
+#[cfg(not(feature = "std"))]
+use crate::lib::vec;
+use crate::lib::Vec;
+
+#[cfg(not(feature = "std"))]
+use num::*;
+
 use super::cluster_group_iterator::{calculate_number_of_clusters_on_axis, ClusterGroupIterator};
 
 fn bulk_load_recursive<T, Params>(elements: Vec<T>, depth: usize) -> ParentNode<T>

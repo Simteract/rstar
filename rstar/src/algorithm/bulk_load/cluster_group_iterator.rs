@@ -1,5 +1,12 @@
 use crate::{Envelope, Point, RTreeObject, RTreeParams};
 
+#[cfg(not(feature = "std"))]
+use crate::lib::vec;
+use crate::lib::Vec;
+
+#[cfg(not(feature = "std"))]
+use num::*;
+
 /// Partitions elements into groups of clusters along a specific axis.
 pub struct ClusterGroupIterator<T: RTreeObject> {
     remaining: Vec<T>,
